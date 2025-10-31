@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnvdssaf7h23k"]
+
+[ext_resource type="Texture2D" uid="uid://bnnm7b21gno1p" path="res://assets/bosses/Mom/BossMae.png" id="1_843q2"]
+[ext_resource type="Texture2D" uid="uid://cpsuwd5m3pca7" path="res://assets/bosses/Mom/AttackHavaiana.png" id="2_5rfim"]
+[ext_resource type="PackedScene" uid="uid://bs34gi7q8geuc" path="res://scenes/player.tscn" id="3_843q2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhu28"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4p75b"]
+radius = 250.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_843q2"]
+size = Vector2(168, 88)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y8ti4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_astit"]
+size = Vector2(1920, 150)
+
+[node name="LevelOne" type="Node2D"]
+position = Vector2(1, -1)
+
+[node name="BossMom" type="CharacterBody2D" parent="."]
+position = Vector2(358, 73)
+
+[node name="Sprite2D" type="Sprite2D" parent="BossMom"]
+position = Vector2(1300, 582)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_843q2")
+
+[node name="Area2D" type="Area2D" parent="BossMom"]
+position = Vector2(-363, -67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossMom/Area2D"]
+position = Vector2(1653, 690)
+shape = SubResource("CircleShape2D_bhu28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossMom"]
+visible = false
+position = Vector2(1288, 623)
+shape = SubResource("CircleShape2D_4p75b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BossMom"]
+
+[node name="Havaiana" type="Area2D" parent="BossMom"]
+position = Vector2(-353, -70)
+
+[node name="Sprite2D" type="Sprite2D" parent="BossMom/Havaiana"]
+position = Vector2(1292, 675)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5rfim")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="BossMom/Havaiana"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossMom/Havaiana"]
+position = Vector2(1282, 661)
+shape = SubResource("RectangleShape2D_843q2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = 935.0
+offset_right = 1921.0
+offset_bottom = 1085.0
+texture = SubResource("CanvasTexture_y8ti4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(-3, -930)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D"]
+position = Vector2(962, 1005)
+shape = SubResource("RectangleShape2D_astit")
+
+[node name="Player" parent="." instance=ExtResource("3_843q2")]
+position = Vector2(272, 881)
