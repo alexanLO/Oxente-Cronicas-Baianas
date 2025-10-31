@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bnvdssaf7h23k"]
 
-[ext_resource type="Texture2D" uid="uid://bnnm7b21gno1p" path="res://assets/bosses/Mom/BossMae.png" id="1_843q2"]
-[ext_resource type="Texture2D" uid="uid://cpsuwd5m3pca7" path="res://assets/bosses/Mom/AttackHavaiana.png" id="2_5rfim"]
-[ext_resource type="PackedScene" uid="uid://bs34gi7q8geuc" path="res://scenes/player.tscn" id="3_843q2"]
+[ext_resource type="Texture2D" uid="uid://bnnm7b21gno1p" path="res://assets/bosses/Mom/BossMae.png" id="1_tmqwm"]
+[ext_resource type="Texture2D" uid="uid://cpsuwd5m3pca7" path="res://assets/bosses/Mom/AttackHavaiana.png" id="2_nbnp6"]
+[ext_resource type="PackedScene" uid="uid://bs34gi7q8geuc" path="res://scenes/player/player.tscn" id="3_a4gob"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhu28"]
 radius = 250.0
@@ -27,7 +27,7 @@ position = Vector2(358, 73)
 [node name="Sprite2D" type="Sprite2D" parent="BossMom"]
 position = Vector2(1300, 582)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_843q2")
+texture = ExtResource("1_tmqwm")
 
 [node name="Area2D" type="Area2D" parent="BossMom"]
 position = Vector2(-363, -67)
@@ -49,7 +49,7 @@ position = Vector2(-353, -70)
 [node name="Sprite2D" type="Sprite2D" parent="BossMom/Havaiana"]
 position = Vector2(1292, 675)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_5rfim")
+texture = ExtResource("2_nbnp6")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="BossMom/Havaiana"]
 
@@ -71,5 +71,5 @@ position = Vector2(-3, -930)
 position = Vector2(962, 1005)
 shape = SubResource("RectangleShape2D_astit")
 
-[node name="Player" parent="." instance=ExtResource("3_843q2")]
+[node name="Player" parent="." instance=ExtResource("3_a4gob")]
 position = Vector2(272, 881)
